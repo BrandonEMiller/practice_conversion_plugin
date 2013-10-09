@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery Boilerplate</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="../src/jquery.boilerplate.js"></script>
+		<link rel="stylesheet" href="../styles/main.css">
+	</head>
+	<body>
+		<div class="container">
+			<h2>Enter a measurement then press the corresponding button</h2>
+			<input class="input_inches" placeholder="Measurement"></input>
+			<br>
+			<button class="button_inches_conversion">Convert Inches</button>
+			<button class="button_feet_conversion">Convert Feet</button>
+			<button class="button_yards_conversion">Convert Yards</button>
+			<button class="button_miles_conversion">Convert Miles</button>
+			<button class="button_centimeters_conversion">Convert Centimeters</button>
+			<button class="button_meters_conversion">Convert Meters</button>
+			<button class="button_kilometers_conversion">Convert Kilometers</button>
+
+
+			<div id="element"></div>
+		</div>
+
+		<script>
+			
+				$(".button_inches_conversion").click(function(){
+					$("#element").Conversion({
+						inches: $('.input_inches').val()
+					});
+				});
+
+				$(".button_feet_conversion").click(function(){
+					$("#element").Conversion({
+						inches: $('.input_inches').val()*12
+					});
+				});
+				$(".button_yards_conversion").click(function(){
+					$("#element").Conversion({
+						inches: $('.input_inches').val()*36
+					});
+				});	
+				$(".button_miles_conversion").click(function(){
+					$("#element").Conversion({
+						inches: $('.input_inches').val()*63360
+					});
+				});
+				$(".button_centimeters_conversion").click(function(){
+					$("#element").Conversion({
+						inches: $('.input_inches').val()/2.54
+					});
+				});
+				$(".button_meters_conversion").click(function(){
+					$("#element").Conversion({
+						inches: ($('.input_inches').val()/2.54)*100
+					});
+				});
+				$(".button_kilometers_conversion").click(function(){
+					$("#element").Conversion({
+						inches: (($('.input_inches').val()/2.54)*100)*1000
+					});
+				});
+
+		
+		</script>
+	</body>
+</html>
